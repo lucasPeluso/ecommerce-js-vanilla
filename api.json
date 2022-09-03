@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "title": "Red sweater oversize",
+        "price": 1800.00,
+        "img": "assets/sweaters-one.jpg",
+        "category": "Sweaters"
+    },
+    {
+        "id": 2,
+        "title": "Sweater oversize",
+        "price": 1900.00,
+        "img": "assets/sweaters-two.jpg",
+        "category": "Sweaters"
+    },
+    {
+        "id": 3,
+        "title": "Sweater white",
+        "price": 1680.00,
+        "img": "assets/sweaters-three.jpg",
+        "category": "Sweaters"
+    },
+    {
+        "id": 4,
+        "title": "Nice sweater",
+        "price": 2300.00,
+        "img": "assets/sweaters-four.jpg",
+        "category": "Sweaters"
+    },
+    {
+        "id": 5,
+        "title": "Sweater pink",
+        "price": 2100.00,
+        "img": "assets/sweaters-five.jpg",
+        "category": "Sweaters"
+    },
+    {
+        "id": 6,
+        "title": "Sweater gray",
+        "price": 1850.00,
+        "img": "assets/sweaters-six.jpg",
+        "category": "Sweaters"
+    },
+    {
+        "id": 7,
+        "title": "Sweater oliva",
+        "price": 1750.00,
+        "img": "assets/sweaters-seven.jpg",
+        "category": "Sweaters"
+    },
+    {
+        "id": 8,
+        "title": "Little sweater",
+        "price": 1650.00,
+        "img": "assets/sweaters-eight.jpg",
+        "category": "Sweaters"
+    },
+    {
+        "id": 9,
+        "title": "Sweater green",
+        "price": 1400.00,
+        "img": "assets/sweaters-nine.jpg",
+        "category": "Sweaters"
+    },
+    {
+        "id": 10,
+        "title": "Sweater plus white",
+        "price": 1999.00,
+        "img": "assets/sweaters-ten.jpg",
+        "category": "Sweaters"
+    },
+    {
+        "id": 11,
+        "title": "Sweater pink",
+        "price": 1700.00,
+        "img": "assets/sweaters-eleven.jpg",
+        "category": "Sweaters"
+    },
+    {
+        "id": 12,
+        "title": "Sweater chiq",
+        "price": 1930.00,
+        "img": "assets/sweaters-twelve.jpg",
+        "category": "Sweaters"
+    }
+]
