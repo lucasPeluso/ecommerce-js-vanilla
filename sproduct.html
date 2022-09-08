@@ -79,74 +79,115 @@
         </section>
     </header>
 
-    <section class="shop container">
+    <section id="product-details__father"class="shop container">
         <div class="root">
             <p>
                 H<span class="root-span">OME</span> / S<span class="root-span">WEATERS</span> / R<span class="root-span">ED</span> S<span class="root-span">WEATER</span> O<span class="root-span">VERSIZE</span></p>
         </div>
     
-        <article class="product-detail" id="product-detail">
-            <div class="product-details__img-div">
-                <img class="product-details__img" src="assets/sweaters-one.jpg" alt="Sweaters Product">
-            </div>
-            <div class="product-details">
-                <div class="product-details__title">
-                    <h5 class="product-details__h5">Red Sweater Oversize</h5>
-                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.3077 18C10.1738 17.9996 10.0439 17.9535 9.93812 17.869C6.5695 15.175 4.24903 12.8551 2.62531 10.5663C0.55324 7.64152 0.0806645 4.9412 1.21969 2.54023C2.03156 0.825248 4.36414 -0.577919 7.09054 0.239036C8.39045 0.625523 9.5246 1.45436 10.3077 2.59012C11.0908 1.45436 12.2249 0.625523 13.5248 0.239036C16.2452 -0.565446 18.5838 0.825248 19.3957 2.54023C20.5347 4.9412 20.0622 7.64152 17.9901 10.5663C16.3664 12.8551 14.0459 15.175 10.6773 17.869C10.5715 17.9535 10.4416 17.9996 10.3077 18ZM5.53952 1.25555C4.89079 1.22956 4.24744 1.38592 3.67851 1.70784C3.10958 2.02976 2.63657 2.50508 2.31025 3.08279C1.37116 5.06593 1.79527 7.27357 3.60681 9.82422C5.53199 12.3802 7.78633 14.6545 10.3077 16.5844C12.8287 14.6564 15.083 12.3842 17.0086 9.83045C18.8262 7.27357 19.2442 5.06593 18.3051 3.08902C17.6993 1.84176 15.8817 0.850193 13.8581 1.4364C13.2092 1.63378 12.6077 1.96881 12.0922 2.41991C11.5767 2.87102 11.1587 3.42822 10.8651 4.05565C10.8194 4.17003 10.7418 4.26786 10.642 4.33671C10.5422 4.40556 10.4248 4.44232 10.3047 4.44232C10.1845 4.44232 10.0671 4.40556 9.96733 4.33671C9.86754 4.26786 9.78989 4.17003 9.74424 4.05565C9.45281 3.42665 9.03551 2.86815 8.51972 2.41676C8.00392 1.96537 7.40127 1.63129 6.75126 1.4364C6.35743 1.31866 5.94962 1.2578 5.53952 1.25555Z" fill="#464E2E"/>
-                    </svg> 
-                </div>
-                <p class="product-details__price bold">$1800.00</p>
-                <h6 class="product-details__h6">Color</h6>
-                <label class="product-details__input-container">Red
-                    <input class="product-details__input" type="radio" checked name="radio">
-                    <span class="product-details__input-check"></span>
-                </label>
-                <label class="product-details__input-container">Green
-                    <input class="product-details__input" type="radio" name="radio">
-                    <span class="product-details__input-check"></span>
-                </label>
-                <div class="product-details__sizes-container">
-                    <h6 class="product-details__h6">Select Size</h6>
-                    <div class="product-details__sizes">
-                        <div class="product-details__size">Size XS</div>
-                        <div class="product-details__size">Size S</div>
-                        <div class="product-details__size">Size M</div>
-                        <div class="product-details__size">Size L</div>
-                        <div class="product-details__size">Size XL</div>
+        <div id="product-details">
+                <div class="product-detail" id="product-detail">
+                    <div class="product-details__img-div">
+                        <img class="product-details__img" alt="Sweaters Product">
                     </div>
+                    <div class="product-details">
+                        <div class="product-details__title">
+                            <h5 class="product-details__h5" id="title-id">Red Sweater Oversize</h5>
+                            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.3077 18C10.1738 17.9996 10.0439 17.9535 9.93812 17.869C6.5695 15.175 4.24903 12.8551 2.62531 10.5663C0.55324 7.64152 0.0806645 4.9412 1.21969 2.54023C2.03156 0.825248 4.36414 -0.577919 7.09054 0.239036C8.39045 0.625523 9.5246 1.45436 10.3077 2.59012C11.0908 1.45436 12.2249 0.625523 13.5248 0.239036C16.2452 -0.565446 18.5838 0.825248 19.3957 2.54023C20.5347 4.9412 20.0622 7.64152 17.9901 10.5663C16.3664 12.8551 14.0459 15.175 10.6773 17.869C10.5715 17.9535 10.4416 17.9996 10.3077 18ZM5.53952 1.25555C4.89079 1.22956 4.24744 1.38592 3.67851 1.70784C3.10958 2.02976 2.63657 2.50508 2.31025 3.08279C1.37116 5.06593 1.79527 7.27357 3.60681 9.82422C5.53199 12.3802 7.78633 14.6545 10.3077 16.5844C12.8287 14.6564 15.083 12.3842 17.0086 9.83045C18.8262 7.27357 19.2442 5.06593 18.3051 3.08902C17.6993 1.84176 15.8817 0.850193 13.8581 1.4364C13.2092 1.63378 12.6077 1.96881 12.0922 2.41991C11.5767 2.87102 11.1587 3.42822 10.8651 4.05565C10.8194 4.17003 10.7418 4.26786 10.642 4.33671C10.5422 4.40556 10.4248 4.44232 10.3047 4.44232C10.1845 4.44232 10.0671 4.40556 9.96733 4.33671C9.86754 4.26786 9.78989 4.17003 9.74424 4.05565C9.45281 3.42665 9.03551 2.86815 8.51972 2.41676C8.00392 1.96537 7.40127 1.63129 6.75126 1.4364C6.35743 1.31866 5.94962 1.2578 5.53952 1.25555Z" fill="#464E2E"/>
+                            </svg> 
+                        </div>
+                        <p class="product-details__price bold">$1800.00</p>
+                        <h6 class="product-details__h6">Color</h6>
+                        <label class="product-details__input-container">Red
+                            <input class="product-details__input" type="radio" checked name="radio">
+                            <span class="product-details__input-check"></span>
+                        </label>
+                        <label class="product-details__input-container">Green
+                            <input class="product-details__input" type="radio" name="radio">
+                            <span class="product-details__input-check"></span>
+                        </label>
+                        <div class="product-details__sizes-container">
+                            <h6 class="product-details__h6">Select Size</h6>
+                            <div class="product-details__sizes">
+                                <div class="product-details__size">Size XS</div>
+                                <div class="product-details__size">Size S</div>
+                                <div class="product-details__size">Size M</div>
+                                <div class="product-details__size">Size L</div>
+                                <div class="product-details__size">Size XL</div>
+                            </div>
+                        </div>
+                        <div class="product-details__amount">
+                            <p class="product-details__amount-number">1</p>
+                            <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.37722 3.3069L10.4659 13L19.6158 3.3646C19.8643 3.10198 20.0009 2.74899 19.9954 2.3833C19.9898 2.01761 19.8427 1.66916 19.5863 1.41462C19.3299 1.16007 18.9853 1.02028 18.6283 1.02599C18.2712 1.0317 17.931 1.18245 17.6824 1.44508L10.4785 9.03538L3.31479 1.39962C3.06788 1.13543 2.72861 0.982529 2.3716 0.974558C2.01458 0.966586 1.66908 1.10419 1.41109 1.35711C1.15311 1.61003 1.00377 1.95754 0.995931 2.32319C0.988092 2.68884 1.1224 3.04268 1.3693 3.30687L1.37722 3.3069Z" fill="#464E2E"/>
+                            </svg>                            
+                        </div>
+                        <div class="product-details__button">
+                            <a href="#" class="product-details__button-a">BUY NOW</a>
+                        </div>
+        
+                        <ul class="product-details__accordion">
+                            <li class="product-details__accordion-li">
+                                    <label for="first-content" class="product-details__accordion-label">
+                                        <h6 class="product-details__h6">MATERIAL AND CARE</h6>
+                                        <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.37722 3.3069L10.4659 13L19.6158 3.3646C19.8643 3.10198 20.0009 2.74899 19.9954 2.3833C19.9898 2.01761 19.8427 1.66916 19.5863 1.41462C19.3299 1.16007 18.9853 1.02028 18.6283 1.02599C18.2712 1.0317 17.931 1.18245 17.6824 1.44508L10.4785 9.03538L3.31479 1.39962C3.06788 1.13543 2.72861 0.982529 2.3716 0.974558C2.01458 0.966586 1.66908 1.10419 1.41109 1.35711C1.15311 1.61003 1.00377 1.95754 0.995931 2.32319C0.988092 2.68884 1.1224 3.04268 1.3693 3.30687L1.37722 3.3069Z" fill="#464E2E"/>
+                                        </svg> 
+                                    </label>
+                                    <input class="product-details__accordion-input" type="radio" name="accordion" id="first-content">
+                                    <div class="product-details__accordion-content">
+                                        <p>
+                                            Viscose and cotton yarn jersey, fresh and shiny. The fit is wide in the body and tighter in the sleeve, with slits on the sides. The neckline is round and is long to the hip. 100% cotton.
+                                            <br />
+                                            Hand wash with neutral soap. Max temperature 40°c. Wash separately, do not tumble dry.
+                                        </p>
+                                    </div>
+                            </li>
+                            <li class="product-details__accordion-li">
+                                    <label for="second-content" class="product-details__accordion-label">
+                                        <h6 class="product-details__h6">SHIPPING & RETURN INFO</h6>
+                                        <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.37722 3.3069L10.4659 13L19.6158 3.3646C19.8643 3.10198 20.0009 2.74899 19.9954 2.3833C19.9898 2.01761 19.8427 1.66916 19.5863 1.41462C19.3299 1.16007 18.9853 1.02028 18.6283 1.02599C18.2712 1.0317 17.931 1.18245 17.6824 1.44508L10.4785 9.03538L3.31479 1.39962C3.06788 1.13543 2.72861 0.982529 2.3716 0.974558C2.01458 0.966586 1.66908 1.10419 1.41109 1.35711C1.15311 1.61003 1.00377 1.95754 0.995931 2.32319C0.988092 2.68884 1.1224 3.04268 1.3693 3.30687L1.37722 3.3069Z" fill="#464E2E"/>
+                                        </svg> 
+                                    </label>
+                                    <input class="product-details__accordion-input" type="radio" name="accordion" id="second-content">
+                                    <div class="product-details__accordion-content">
+                                        <p>
+                                            The shipment is made through the national mail, at home, or branch. For international shipments consult the mail.
+                                            <br />
+                                            Free shipping over $3,000.
+                                            <br />
+                                            Changes are made season by season and the value of the garment is respected for 30 days from the date of purchase.
+                                            <br />
+                                            Returns can be made within 30 days of purchase. The price paid will always be taken.
+                                        </p>
+                                    </div>
+                            </li>
+                            <li class="product-details__accordion-li">
+                                    <label for="third-content" class="product-details__accordion-label">
+                                        <h6 class="product-details__h6">PAYMENT OPTIONS</h6>
+                                        <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.37722 3.3069L10.4659 13L19.6158 3.3646C19.8643 3.10198 20.0009 2.74899 19.9954 2.3833C19.9898 2.01761 19.8427 1.66916 19.5863 1.41462C19.3299 1.16007 18.9853 1.02028 18.6283 1.02599C18.2712 1.0317 17.931 1.18245 17.6824 1.44508L10.4785 9.03538L3.31479 1.39962C3.06788 1.13543 2.72861 0.982529 2.3716 0.974558C2.01458 0.966586 1.66908 1.10419 1.41109 1.35711C1.15311 1.61003 1.00377 1.95754 0.995931 2.32319C0.988092 2.68884 1.1224 3.04268 1.3693 3.30687L1.37722 3.3069Z" fill="#464E2E"/>
+                                        </svg> 
+                                    </label>
+                                    <input class="product-details__accordion-input" type="radio" name="accordion" id="third-content">
+                                    <div class="product-details__accordion-content">
+                                        <p id="holahola">
+                                            Cash.<br />
+                                            Checks.<br />
+                                            Debit cards.<br />
+                                            Credit cards.<br />
+                                            Mobile payments.<br />
+                                            Electronic bank transfers.
+                                        </p>
+                                    </div>
+                            </li>
+                        </ul>
+
+                    </div>        
                 </div>
-                <div class="product-details__amount">
-                    <p class="product-details__amount-number">1</p>
-                    <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.37722 3.3069L10.4659 13L19.6158 3.3646C19.8643 3.10198 20.0009 2.74899 19.9954 2.3833C19.9898 2.01761 19.8427 1.66916 19.5863 1.41462C19.3299 1.16007 18.9853 1.02028 18.6283 1.02599C18.2712 1.0317 17.931 1.18245 17.6824 1.44508L10.4785 9.03538L3.31479 1.39962C3.06788 1.13543 2.72861 0.982529 2.3716 0.974558C2.01458 0.966586 1.66908 1.10419 1.41109 1.35711C1.15311 1.61003 1.00377 1.95754 0.995931 2.32319C0.988092 2.68884 1.1224 3.04268 1.3693 3.30687L1.37722 3.3069Z" fill="#464E2E"/>
-                    </svg>                            
-                </div>
-                <div class="product-details__button">
-                    <a class="product-details__button-a">BUY NOW</a>
-                </div>
-                <div class="product-details__accordeon-container">
-                    <div class="product-details__accordeon">
-                        <h6 class="product-details__h6">MATERIAL AND CARE</h6>
-                        <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.37722 3.3069L10.4659 13L19.6158 3.3646C19.8643 3.10198 20.0009 2.74899 19.9954 2.3833C19.9898 2.01761 19.8427 1.66916 19.5863 1.41462C19.3299 1.16007 18.9853 1.02028 18.6283 1.02599C18.2712 1.0317 17.931 1.18245 17.6824 1.44508L10.4785 9.03538L3.31479 1.39962C3.06788 1.13543 2.72861 0.982529 2.3716 0.974558C2.01458 0.966586 1.66908 1.10419 1.41109 1.35711C1.15311 1.61003 1.00377 1.95754 0.995931 2.32319C0.988092 2.68884 1.1224 3.04268 1.3693 3.30687L1.37722 3.3069Z" fill="#464E2E"/>
-                        </svg> 
-                    </div>
-                    <div class="product-details__accordeon">
-                        <h6 class="product-details__h6">SHIPPING & RETURN INFO</h6>
-                        <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.37722 3.3069L10.4659 13L19.6158 3.3646C19.8643 3.10198 20.0009 2.74899 19.9954 2.3833C19.9898 2.01761 19.8427 1.66916 19.5863 1.41462C19.3299 1.16007 18.9853 1.02028 18.6283 1.02599C18.2712 1.0317 17.931 1.18245 17.6824 1.44508L10.4785 9.03538L3.31479 1.39962C3.06788 1.13543 2.72861 0.982529 2.3716 0.974558C2.01458 0.966586 1.66908 1.10419 1.41109 1.35711C1.15311 1.61003 1.00377 1.95754 0.995931 2.32319C0.988092 2.68884 1.1224 3.04268 1.3693 3.30687L1.37722 3.3069Z" fill="#464E2E"/>
-                        </svg> 
-                    </div>
-                    <div class="product-details__accordeon">
-                        <h6 class="product-details__h6">PAYMENT OPTIONS</h6>
-                        <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.37722 3.3069L10.4659 13L19.6158 3.3646C19.8643 3.10198 20.0009 2.74899 19.9954 2.3833C19.9898 2.01761 19.8427 1.66916 19.5863 1.41462C19.3299 1.16007 18.9853 1.02028 18.6283 1.02599C18.2712 1.0317 17.931 1.18245 17.6824 1.44508L10.4785 9.03538L3.31479 1.39962C3.06788 1.13543 2.72861 0.982529 2.3716 0.974558C2.01458 0.966586 1.66908 1.10419 1.41109 1.35711C1.15311 1.61003 1.00377 1.95754 0.995931 2.32319C0.988092 2.68884 1.1224 3.04268 1.3693 3.30687L1.37722 3.3069Z" fill="#464E2E"/>
-                        </svg> 
-                    </div>
-                </div>
-            </div>        
-        </article>
+        </div>
     </section>
 
 
@@ -262,5 +303,6 @@
     </footer>
 
     <script defer src="script.js"></script>
+    <script src="fetchDataSproduct.js" type="module"></script>
 </body>
 </html>

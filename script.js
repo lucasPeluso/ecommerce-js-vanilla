@@ -33,37 +33,11 @@ setInterval(() => {
     }
 }, 5000)
 
-// ***************** Fetch Data ******************* //
 
-document.addEventListener('DOMContentLoaded', () => fetchData())
-
-const fetchData = async () => {
-    try {
-        const res = await fetch('api.json');
-        const data = await res.json();
-        addProduct(data)
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-// ***************** Template Content ******************* //
-
-const articleProduct = document.getElementById('article-product').content;
-const articlesProducts = document.getElementById('articles-products')
-const fragment = document.createDocumentFragment();
+// ***************** Fetch Data Shop ******************* //
 
 
-const addProduct = data => {
-    data.forEach(product => {
-        articleProduct.querySelector('h5').textContent = product.title;
-        articleProduct.querySelector('p').textContent = `$${product.price}.00`;
-        articleProduct.querySelector('img').setAttribute("src", product.img);
-        articleProduct.querySelector('a').dataset.id  = product.id;
-        
 
-        const clone = articleProduct.cloneNode(true);
-        fragment.appendChild(clone)
-    });
-    articlesProducts.appendChild(fragment)
-}
+// ***************** Single Product ******************* //
+
+
