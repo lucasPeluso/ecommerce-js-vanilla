@@ -11,14 +11,17 @@
     });
 
     d.addEventListener("click", e => {
-        if(!e.target.matches(".menu a"))
-        return false;
-
-        $btnMenu.firstElementChild.classList.remove("none");
-        $btnMenu.lastElementChild.classList.add("none");
-        $menu.classList.remove("is-active");
+        if(!e.target.matches(".menu__a h3")){
+            return false;
+        } else {
+            $btnMenu.firstElementChild.classList.remove("none");
+            $btnMenu.lastElementChild.classList.add("none");
+            $menu.classList.remove("is-active");
+        }
     })
 })(document);
+
+
 
 // ***************** testimony slider ******************* //
 
@@ -33,11 +36,76 @@ setInterval(() => {
     }
 }, 5000)
 
-
-// ***************** Fetch Data Shop ******************* //
-
+// ***************** Category Selector ******************* //
 
 
-// ***************** Single Product ******************* //
+// section categories
+
+// elementos sweater, shoes y shorts
+
+const sweatersCategory = document.getElementById('category-sweaters')
+const shortsCategory = document.getElementById('category-shorts')
+const shoesCategory = document.getElementById('category-shoes')
 
 
+//  funcion para crear el objeto category
+function setCategory(nameCategory) {
+    let category = {
+        nameCategory: undefined
+    }
+
+    localStorage.setItem("nameCategory", nameCategory)
+}
+
+
+// funcion para obtener el nombre de la categoría y "setearla"
+const getNameCategory = (e) => {
+    let nameCategory = e.target.id
+    setCategory(nameCategory)
+    console.log(nameCategory)
+
+    window.location.href="/shop.html"
+
+} 
+
+// evento que obtiene la categoría de cada imagén
+sweatersCategory.addEventListener('click', (e) => {   
+    getNameCategory(e)
+})
+
+shortsCategory.addEventListener('click', (e) => {   
+    getNameCategory(e)
+})
+
+shoesCategory.addEventListener('click', (e) => {   
+    getNameCategory(e)
+})
+
+
+// ***************** Menu Links ***************** //
+
+const sweatersLink = document.getElementById('menu-sweaters')
+const shortsLink = document.getElementById('menu-shorts')
+const shoesLink = document.getElementById('menu-shoes')
+const exploreLink = document.getElementById('menu-explore')
+const jewelleryLink = document.getElementById('menu-jewellery')
+
+jewelleryLink.addEventListener('click', (e) => {   
+    getNameCategory(e)
+})
+
+exploreLink.addEventListener('click', (e) => {   
+    getNameCategory(e)
+})
+
+sweatersLink.addEventListener('click', (e) => {   
+    getNameCategory(e)
+})
+
+shortsLink.addEventListener('click', (e) => {   
+    getNameCategory(e)
+})
+
+shoesLink.addEventListener('click', (e) => {   
+    getNameCategory(e)
+})

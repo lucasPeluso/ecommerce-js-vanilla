@@ -1,54 +1,105 @@
+import { sortElemPrice, sortElemTitle } from "./sortProducts.js";
+import { displayList, setupPagination } from "./setupPagination.js";
+
+
 const articlesProducts = document.getElementById('articles-products')
-const articleProduct = document.getElementById('article-product').content;
-const fragment = document.createDocumentFragment();
+const pagination = document.getElementById('pagination')
+const select = document.getElementById('select')
 
 const addProduct = data => {
-    data.forEach(product => {
-        articleProduct.querySelector('h5').textContent = product.title;
-        articleProduct.querySelector('p').textContent = `$${product.price}.00`;
-        articleProduct.querySelector('img').setAttribute("src", product.img);
-        articleProduct.querySelector('.article-product__button').dataset.id  = product.id;
-    
+    // pagina actual
+    let currentPage = 1;
+    // nro de filas = nro de objetos que se muestran por pagina
+    let rows = 8;
 
-        const clone = articleProduct.cloneNode(true);
-        fragment.appendChild(clone)
-    });
-    articlesProducts.appendChild(fragment);
+    displayList(data, articlesProducts, rows, currentPage)
+    setupPagination(data, pagination, rows)
+    
+    // ordenar por titulo o precio
+    select.onchange = sortingValue;
+
+    function sortingValue() {
+        if(this.value === 'Default'){
+            displayList(data, articlesProducts, rows, currentPage)
+        }
+        if(this.value === 'AToZ'){
+            sortElemTitle(data)
+            displayList(data, articlesProducts, rows, currentPage)
+        }
+        if(this.value === 'LowToHigh') {
+            sortElemPrice(data, true)
+            displayList(data, articlesProducts, rows, currentPage)
+
+        }
+        if(this.value === 'HighToLow') {
+            sortElemPrice(data, false)
+            displayList(data, articlesProducts, rows, currentPage)
+        }
+    }  
 }
 
-
-
+// FETCH DATA
 
 const fetchData = async () => {
     try {
         const res = await fetch('api.json');
         const data = await res.json();
-        addProduct(data)
-            
-        const button = document.getElementsByClassName('article-product__button')
-        console.log(button)
-        for(let i = 0; i < button.length; i++) {
-            button[i].addEventListener('click', (e) => {
-                function setLocal() {
-                    let buttonId = {
-                        id: undefined
-                    }
-                
-                    let id = e.target.dataset.id
-                
-                    localStorage.setItem("id", id)
-                    console.log(id)
-                }
-                
-                setLocal()
-                window.location.href="/sproduct.html";
 
-            })
+        // obteniendo la data correspondiente a la categoria elegida
+        let nameCategory = localStorage.getItem("nameCategory")
+        if(nameCategory == "category-sweaters" || nameCategory == "menu-sweaters") {
+            const dataSweatersOnly = data.filter(({category}) => category === 'Sweaters');
+            localStorage.removeItem("nameCategory")
+            addProduct(dataSweatersOnly)
+        } else if(nameCategory == "category-shorts" || nameCategory == "menu-shorts") {
+            const dataShortsOnly = data.filter(({category}) => category === 'Shorts');
+            localStorage.removeItem("nameCategory")
+            addProduct(dataShortsOnly)
+        } else if(nameCategory == "category-shoes" || nameCategory == "menu-shoes") {
+            const dataShoesOnly = data.filter(({category}) => category === 'Shoes');
+            localStorage.removeItem("nameCategory")
+            addProduct(dataShoesOnly)
+        } else if(nameCategory == "menu-jewellery") {
+            const dataJewelleryOnly = data.filter(({category}) => category === 'Jewellery');
+            localStorage.removeItem("nameCategory")
+            addProduct(dataJewelleryOnly)
+        } else {
+            localStorage.removeItem("nameCategory")
+            addProduct(data)
         }
+
     } catch (error) {
         console.log(error)
     }
 }
+
+// ***************** Menu Links ***************** //
+
+const sweatersLink = document.getElementById('menu-sweaters')
+const shortsLink = document.getElementById('menu-shorts')
+const shoesLink = document.getElementById('menu-shoes')
+const exploreLink = document.getElementById('menu-explore')
+const jewelleryLink = document.getElementById('menu-jewellery')
+
+jewelleryLink.addEventListener('click', (e) => {   
+    getNameCategory(e)
+})
+
+exploreLink.addEventListener('click', (e) => {   
+    getNameCategory(e)
+})
+
+sweatersLink.addEventListener('click', (e) => {   
+    getNameCategory(e)
+})
+
+shortsLink.addEventListener('click', (e) => {   
+    getNameCategory(e)
+})
+
+shoesLink.addEventListener('click', (e) => {   
+    getNameCategory(e)
+})
 
 
 
