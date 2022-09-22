@@ -109,3 +109,22 @@ shortsLink.addEventListener('click', (e) => {
 shoesLink.addEventListener('click', (e) => {   
     getNameCategory(e)
 })
+
+// ***************** Validar Email ***************** //
+
+
+function validateEmail(email) {
+    const newsletterRes = document.querySelector('.newsletter-res')
+    const newsletterInput = document.querySelector('.newsletter-form__input')
+    let expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    let isValid = expReg.test(email);
+    if(isValid) {
+        newsletterInput.value = ''
+        newsletterRes.classList.remove("none")
+        newsletterRes.textContent = '¡Thank you for subscribing! Enjoy your shopping'
+    } else {
+        newsletterInput.value = ''
+        newsletterRes.classList.remove("none")
+        newsletterRes.textContent = 'The email is NOT valid'
+    }
+}

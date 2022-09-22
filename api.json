@@ -4,252 +4,396 @@
         "title": "Red sweater oversize",
         "price": 1800.00,
         "img": "assets/sweaters-one.jpg",
-        "category": "Sweaters"
+        "color": ["Red", "Green", "Grey"],
+        "sizes": ["M", "L", "XL"],
+        "category": "Sweaters",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 2,
         "title": "Sweater oversize",
         "price": 1900.00,
         "img": "assets/sweaters-two.jpg",
-        "category": "Sweaters"
+        "color": ["Green", "Grey"],
+        "sizes": ["M", "L", "XL"],
+        "category": "Sweaters",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 3,
         "title": "Sweater white",
         "price": 1680.00,
         "img": "assets/sweaters-three.jpg",
-        "category": "Sweaters"
+        "color": ["White", "Black"],
+        "sizes": ["M", "L", "XL"],
+        "category": "Sweaters",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 4,
         "title": "Nice sweater",
         "price": 2300.00,
         "img": "assets/sweaters-four.jpg",
-        "category": "Sweaters"
+        "color": ["Grey"],
+        "sizes": ["M", "L", "XL"],
+        "category": "Sweaters",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 5,
         "title": "Sweater pink",
         "price": 2100.00,
         "img": "assets/sweaters-five.jpg",
-        "category": "Sweaters"
+        "color": ["Pink", "Red", "Yellow"],
+        "sizes": ["M", "L", "XL"],
+        "category": "Sweaters",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 6,
         "title": "Sweater gray",
         "price": 1850.00,
         "img": "assets/sweaters-six.jpg",
-        "category": "Sweaters"
+        "color": ["Beige", "Brown"],
+        "sizes": ["M", "L", "XL"],
+        "category": "Sweaters",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 7,
         "title": "Sweater oliva",
         "price": 1750.00,
         "img": "assets/sweaters-seven.jpg",
-        "category": "Sweaters"
+        "color": ["Green", "Blue", "Grey"],
+        "sizes": ["M", "L", "XL"],
+        "category": "Sweaters",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 8,
         "title": "Little sweater",
         "price": 1650.00,
         "img": "assets/sweaters-eight.jpg",
-        "category": "Sweaters"
+        "color": ["White", "Grey"],
+        "sizes": ["M", "L", "XL"],
+        "category": "Sweaters",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 9,
         "title": "Sweater green",
         "price": 1400.00,
         "img": "assets/sweaters-nine.jpg",
-        "category": "Sweaters"
+        "color": ["Green", "Grey"],
+        "sizes": ["M", "L", "XL"],
+        "category": "Sweaters",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 10,
         "title": "Sweater plus white",
         "price": 1999.00,
         "img": "assets/sweaters-ten.jpg",
-        "category": "Sweaters"
+        "color": ["White"],
+        "sizes": ["M", "L", "XL"],
+        "category": "Sweaters",
+        "new": "new",
+        "quantity": 1
     },
     {
         "id": 11,
-        "title": "Sweater pink",
+        "title": "Sweater large",
         "price": 1700.00,
         "img": "assets/sweaters-eleven.jpg",
-        "category": "Sweaters"
+        "color": ["Pink", "Red"],
+        "sizes": ["M", "L", "XL"],
+        "category": "Sweaters",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 12,
         "title": "Sweater chiq",
         "price": 1930.00,
         "img": "assets/sweaters-twelve.jpg",
-        "category": "Sweaters"
+        "color": ["White", "Green", "Red"],
+        "sizes": ["M", "L", "XL"],
+        "category": "Sweaters",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 13,
         "title": "Short grey",
         "price": 800.00,
         "img": "assets/shorts-one.jpg",
-        "category": "Shorts"
+        "color": ["Grey", "White"],
+        "sizes": ["XS", "S", "M", "L", "XL"],
+        "category": "Shorts",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 14,
         "title": "Short pink",
         "price": 900.00,
         "img": "assets/shorts-two.jpg",
-        "category": "Shorts"
+        "color": ["Pink", "Red", "Grey"],
+        "sizes": ["XS", "S", "M"],
+        "category": "Shorts",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 15,
         "title": "Short white",
         "price": 680.00,
         "img": "assets/shorts-three.jpg",
-        "category": "Shorts"
+        "color": ["White", "Grey"],
+        "sizes": ["XS", "S", "M"],
+        "category": "Shorts",
+        "new": "new",
+        "quantity": 1
     },
     {
         "id": 16,
         "title": "Short green",
         "price": 399.00,
         "img": "assets/shorts-four.jpg",
-        "category": "Shorts"
+        "color": ["Green"],
+        "sizes": ["XS", "S", "M"],
+        "category": "Shorts",
+        "new": "new",
+        "quantity": 1
     },
     {
         "id": 17,
         "title": "Short leaf green",
         "price": 500.00,
         "img": "assets/shorts-five.jpg",
-        "category": "Shorts"
+        "color": ["White", "Green"],
+        "sizes": ["XS", "S", "M"],
+        "category": "Shorts",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 18,
-        "title": "Wild short",
+        "title": "Wild jean",
         "price": 850.00,
         "img": "assets/shorts-six.jpg",
-        "category": "Shorts"
+        "color": ["Blue"],
+        "sizes": ["XS", "S", "M"],
+        "category": "Shorts",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 19,
         "title": "Short black sport",
         "price": 750.00,
         "img": "assets/shorts-seven.jpg",
-        "category": "Shorts"
+        "color": ["Black", "Grey"],
+        "sizes": ["XS", "S", "M"],
+        "category": "Shorts",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 20,
         "title": "Short green",
         "price": 650.00,
         "img": "assets/shorts-eight.jpg",
-        "category": "Shorts"
+        "color": ["Green", "Grey"],
+        "sizes": ["XS", "S", "M"],
+        "category": "Shorts",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 21,
         "title": "Blue short",
         "price": 400.00,
         "img": "assets/shorts-nine.jpg",
-        "category": "Shorts"
+        "color": ["Blue"],
+        "sizes": ["XS", "S", "M"],
+        "category": "Shorts",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 22,
         "title": "Sport jean",
         "price": 999.00,
         "img": "assets/shorts-ten.jpg",
-        "category": "Shorts"
+        "color": ["Lightblue"],
+        "sizes": ["XS", "S", "M"],
+        "category": "Shorts",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 23,
         "title": "Shoes brown",
         "price": 4800.00,
         "img": "assets/shoes-one.jpg",
-        "category": "Shoes"
+        "color": ["Brown", "Black"],
+        "sizes": ["5'5", "6'5", "7'5", "8'5", "9'5"],
+        "category": "Shoes",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 24,
         "title": "Shoes beige",
         "price": 4900.00,
         "img": "assets/shoes-two.jpg",
-        "category": "Shoes"
+        "color": ["Beige", "Grey"],
+        "sizes": ["5'5", "6'5", "7'5", "8'5", "9'5"],
+        "category": "Shoes",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 25,
         "title": "Shoes blue",
         "price": 4680.00,
         "img": "assets/shoes-three.jpg",
-        "category": "Shoes"
+        "color": ["Blue", "Black"],
+        "sizes": ["5'5", "6'5", "7'5", "8'5", "9'5"],
+        "category": "Shoes",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 26,
         "title": "Big shoes brown",
         "price": 4300.00,
         "img": "assets/shoes-four.jpg",
-        "category": "Shoes"
+        "color": ["Brown", "Black"],
+        "sizes": ["5'5", "6'5", "7'5", "8'5", "9'5"],
+        "category": "Shoes",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 27,
         "title": "Shoes yellow",
         "price": 4100.00,
         "img": "assets/shoes-five.jpg",
-        "category": "Shoes"
+        "color": ["Yellow", "Blue"],
+        "sizes": ["5'5", "6'5", "7'5", "8'5", "9'5"],
+        "category": "Shoes",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 28,
         "title": "Shoes dance",
         "price": 4850.00,
         "img": "assets/shoes-six.jpg",
-        "category": "Shoes"
+        "color": ["Black", "Grey"],
+        "sizes": ["5'5", "6'5", "7'5", "8'5", "9'5"],
+        "category": "Shoes",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 29,
         "title": "Shoes sports",
         "price": 4750.00,
         "img": "assets/shoes-seven.jpg",
-        "category": "Shoes"
+        "color": ["Red", "Blue"],
+        "sizes": ["5'5", "6'5", "7'5", "8'5", "9'5"],
+        "category": "Shoes",
+        "new": "new",
+        "quantity": 1
     },
     {
         "id": 30,
         "title": "Shoes black",
         "price": 4650.00,
         "img": "assets/shoes-eight.jpg",
-        "category": "Shoes"
+        "color": ["Black"],
+        "sizes": ["5'5", "6'5", "7'5", "8'5", "9'5"],
+        "category": "Shoes",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 31,
         "title": "Shoes VIP",
         "price": 4400.00,
         "img": "assets/shoes-nine.jpg",
-        "category": "Shoes"
+        "color": ["Gold", "Silver"],
+        "sizes": ["5'5", "6'5", "7'5", "8'5", "9'5"],
+        "category": "Shoes",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 32,
         "title": "Shoes girl",
         "price": 4999.00,
         "img": "assets/shoes-ten.jpg",
-        "category": "Shoes"
+        "color": ["Multicolor"],
+        "sizes": ["5'5", "6'5", "7'5", "8'5", "9'5"],
+        "category": "Shoes",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 33,
         "title": "Shoes white",
         "price": 4999.00,
         "img": "assets/shoes-eleven.jpg",
-        "category": "Shoes"
+        "color": ["White", "Black"],
+        "sizes": ["5'5", "6'5", "7'5", "8'5", "9'5"],
+        "category": "Shoes",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 34,
         "title": "Shoes two colors",
         "price": 5699.00,
         "img": "assets/shoes-twelve.jpg",
-        "category": "Shoes"
+        "color": ["Pink & Grey", "Black & White"],
+        "sizes": ["5'5", "6'5", "7'5", "8'5", "9'5"],
+        "category": "Shoes",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 35,
         "title": "Shoes wild",
         "price": 5200.00,
         "img": "assets/shoes-thirteen.jpg",
-        "category": "Shoes"
+        "color": ["Black & Yellow", "Black & Red"],
+        "sizes": ["5'5", "6'5", "7'5", "8'5", "9'5"],
+        "category": "Shoes",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 36,
         "title": "Shoes red",
         "price": 5350.00,
         "img": "assets/shoes-fourteen.jpg",
-        "category": "Shoes"
+        "color": ["Red", "Blue", "Grey"],
+        "sizes": ["5'5", "6'5", "7'5", "8'5", "9'5"],
+        "category": "Shoes",
+        "new": "undefined",
+        "quantity": 1
     }
     ,
     {
@@ -257,55 +401,87 @@
         "title": "Bracelet",
         "price": 5500.00,
         "img": "assets/item-one.jpg",
-        "category": "Jewellery"
+        "color": ["Gold"],
+        "sizes": ["Default"],
+        "category": "Jewellery",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 38,
         "title": "Gold 24K bracelet",
         "price": 8850.00,
         "img": "assets/item-two.jpg",
-        "category": "Jewellery"
+        "color": ["Gold"],
+        "sizes": ["Default"],
+        "category": "Jewellery",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 39,
         "title": "Necklase lock",
         "price": 7050.00,
         "img": "assets/item-three.jpg",
-        "category": "Jewellery"
+        "color": ["Gold"],
+        "sizes": ["Default"],
+        "category": "Jewellery",
+        "new": "new",
+        "quantity": 1
     },
     {
         "id": 40,
         "title": "Gold bracelet",
         "price": 6500.00,
         "img": "assets/item-four.jpg",
-        "category": "Jewellery"
+        "color": ["Gold"],
+        "sizes": ["Default"],
+        "category": "Jewellery",
+        "new": "new",
+        "quantity": 1
     },
     {
         "id": 41,
         "title": "Gold circles",
         "price": 2600.00,
         "img": "assets/item-five.jpg",
-        "category": "Jewellery"
+        "color": ["Gold"],
+        "sizes": ["Default"],
+        "category": "Jewellery",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 42,
         "title": "Gold jewellery",
         "price": 9500.00,
         "img": "assets/item-six.jpg",
-        "category": "Jewellery"
+        "color": ["Gold"],
+        "sizes": ["Default"],
+        "category": "Jewellery",
+        "new": "undefined",
+        "quantity": 1
     },
     {
         "id": 43,
         "title": "Heart bracelet",
         "price": 1800.00,
         "img": "assets/item-seven.jpg",
-        "category": "Jewellery"
+        "color": ["Lightblue", "Red"],
+        "sizes": ["Default"],
+        "category": "Jewellery",
+        "new": "new",
+        "quantity": 1
     },
     {
         "id": 44,
         "title": "Heart blue",
         "price": 1750.00,
         "img": "assets/item-eight.jpg",
-        "category": "Jewellery"
+        "color": ["Blue", "Black", "Pink"],
+        "sizes": ["Default"],
+        "category": "Jewellery",
+        "new": "undefined",
+        "quantity": 1
     }
 ]

@@ -52,11 +52,12 @@
                             <path d="M9 18C8.8757 17.9996 8.75502 17.9535 8.65682 17.869C5.52882 15.175 3.37409 12.8551 1.86635 10.5663C-0.0577072 7.64152 -0.496528 4.9412 0.561142 2.54023C1.31501 0.825247 3.48099 -0.577919 6.01264 0.239036C7.2197 0.625523 8.27284 1.45436 9 2.59012C9.72716 1.45436 10.7803 0.625523 11.9874 0.239036C14.5134 -0.565446 16.685 0.825247 17.4389 2.54023C18.4965 4.9412 18.0577 7.64152 16.1336 10.5663C14.6259 12.8551 12.4712 15.175 9.34318 17.869C9.24498 17.9535 9.1243 17.9996 9 18ZM4.57241 1.25555C3.97002 1.22956 3.37262 1.38592 2.84433 1.70784C2.31604 2.02976 1.87682 2.50508 1.57381 3.08279C0.70179 5.06593 1.0956 7.27357 2.77775 9.82422C4.56542 12.3802 6.65873 14.6545 9 16.5844C11.3409 14.6564 13.4342 12.3842 15.2222 9.83045C16.91 7.27357 17.2982 5.06593 16.4262 3.08902C15.8636 1.84176 14.1758 0.850192 12.2968 1.4364C11.6943 1.63378 11.1357 1.96881 10.6571 2.41991C10.1784 2.87102 9.79025 3.42822 9.51758 4.05565C9.4752 4.17003 9.40309 4.26786 9.31043 4.33671C9.21777 4.40556 9.10874 4.44232 8.99719 4.44232C8.88564 4.44232 8.7766 4.40556 8.68394 4.33671C8.59128 4.26786 8.51918 4.17003 8.47679 4.05565C8.20617 3.42665 7.81869 2.86815 7.33973 2.41676C6.86078 1.96537 6.30117 1.63129 5.69759 1.4364C5.3319 1.31866 4.95322 1.2578 4.57241 1.25555Z" fill="#333333"/>
                         </svg>                            
                     </button>
-                    <button class="menu-btn">
+                    <a href="#cart" id="btn-cart" class="menu-btn">
                         <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 5.60563V3.94366C12 3.42577 11.8965 2.91295 11.6955 2.43449C11.4945 1.95602 11.1999 1.52127 10.8284 1.15507C10.457 0.788869 10.016 0.498381 9.53073 0.300193C9.04543 0.102006 8.52529 0 8 0C7.47471 0 6.95457 0.102006 6.46927 0.300193C5.98396 0.498381 5.54301 0.788869 5.17157 1.15507C4.80014 1.52127 4.5055 1.95602 4.30448 2.43449C4.10346 2.91295 4 3.42577 4 3.94366V7.88732C4 8.03674 4.0602 8.18004 4.16737 8.28569C4.27453 8.39135 4.41988 8.4507 4.57143 8.4507C4.72298 8.4507 4.86833 8.39135 4.97549 8.28569C5.08265 8.18004 5.14286 8.03674 5.14286 7.88732V6.73239H9.71429V5.60563H5.14286V3.94366C5.14286 3.19657 5.44388 2.48008 5.9797 1.95181C6.51551 1.42354 7.24224 1.12676 8 1.12676C8.75776 1.12676 9.48449 1.42354 10.0203 1.95181C10.5561 2.48008 10.8571 3.19657 10.8571 3.94366V7.85915C10.8571 8.00857 10.9173 8.15187 11.0245 8.25752C11.1317 8.36318 11.277 8.42253 11.4286 8.42253C11.5801 8.42253 11.7255 8.36318 11.8326 8.25752C11.9398 8.15187 12 8.00857 12 7.85915V6.73239H14.8571V16.8732H1.14286V6.73239H2.85714V5.60563H0V16.9239C0 17.2093 0.114989 17.483 0.319672 17.6848C0.524354 17.8866 0.801964 18 1.09143 18H14.9086C15.198 18 15.4756 17.8866 15.6803 17.6848C15.885 17.483 16 17.2093 16 16.9239V5.60563H12Z" fill="black"/>
-                        </svg>                                                                                                                                                                             
-                    </button>
+                        </svg>   
+                        <span id="counter-cart" class="btn-cart__counter">0</span>                                                                                                                                                                            
+                    </a>
                 </div>
                 <nav class="menu">
                     <div class="menu__container">
@@ -79,14 +80,38 @@
             </div> 
         </section>
     </header>
-    
+
+    <!-- ********************* modal ************************ -->
+    <article class="modal" id="cart">
+        <div class="modal__content">
+            <a href="#cerrar" class="modal__close">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.0001 0L7.99928 6.00004L1.99986 0L0 2.00004L5.9995 8L0 14L1.99986 16L7.99928 10L14.0001 16L16 14L10.0005 8L16 2.00004L14.0001 0Z" fill="#414141"/>
+                </svg>       
+            </a>
+            <article class="modal__cart">
+                <h3 class="modal__title">My Cart</h3>
+                <div class="modal-items" id="cart-container">
+                </div>
+                <div class="modal__total-delete">
+                    <h5 class="modal__total">Total: $<span id="modal__total-price"></span></h5>
+                    <button class="modal-delete-all">delete all</button>
+                </div>
+                <div class="modal__button">
+                    <a href="#" class="modal__button-a">BUY ALL</a>
+                </div>
+                
+            </article>
+        </div>
+    </article>
+
     <section class="shop container">
         <div class="root">
-            <p>H<span class="root-span">OME</span> / S<span class="root-span">WEATERS</span></p>
+            <a class="root__a" href="/index.html">H<span class="root-span">OME</span></a> / <a id="root-category" class="root__a root-span" href="/shop.html">SWEATERS</a>
         </div>
     
         <div class="items-filter">
-            <p>1 - 12 of 32 Items</p>
+            <p id="numbers-of-items">1 - 12 of 32 Items</p>
             <div class="filters">
                 <p>Sort by:</p>
                 <select id="select" class="filters-options">
@@ -115,8 +140,8 @@
                     </div>
                     <div class="article-product__flex">
                         <div class="article-product__description">
+                            <h5 class="article-product__description-h5">Red sweater soversize</h5>
                             <p id="price" class="article-product__description-p bold" data-price="">$1800.00</p>
-                            <h5 class="article-product__description-h5">Red sweater oversize</h5>
                         </div>             
                         <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10.3077 18C10.1738 17.9996 10.0439 17.9535 9.93812 17.869C6.5695 15.175 4.24903 12.8551 2.62531 10.5663C0.55324 7.64152 0.0806645 4.9412 1.21969 2.54023C2.03156 0.825248 4.36414 -0.577919 7.09054 0.239036C8.39045 0.625523 9.5246 1.45436 10.3077 2.59012C11.0908 1.45436 12.2249 0.625523 13.5248 0.239036C16.2452 -0.565446 18.5838 0.825248 19.3957 2.54023C20.5347 4.9412 20.0622 7.64152 17.9901 10.5663C16.3664 12.8551 14.0459 15.175 10.6773 17.869C10.5715 17.9535 10.4416 17.9996 10.3077 18ZM5.53952 1.25555C4.89079 1.22956 4.24744 1.38592 3.67851 1.70784C3.10958 2.02976 2.63657 2.50508 2.31025 3.08279C1.37116 5.06593 1.79527 7.27357 3.60681 9.82422C5.53199 12.3802 7.78633 14.6545 10.3077 16.5844C12.8287 14.6564 15.083 12.3842 17.0086 9.83045C18.8262 7.27357 19.2442 5.06593 18.3051 3.08902C17.6993 1.84176 15.8817 0.850193 13.8581 1.4364C13.2092 1.63378 12.6077 1.96881 12.0922 2.41991C11.5767 2.87102 11.1587 3.42822 10.8651 4.05565C10.8194 4.17003 10.7418 4.26786 10.642 4.33671C10.5422 4.40556 10.4248 4.44232 10.3047 4.44232C10.1845 4.44232 10.0671 4.40556 9.96733 4.33671C9.86754 4.26786 9.78989 4.17003 9.74424 4.05565C9.45281 3.42665 9.03551 2.86815 8.51972 2.41676C8.00392 1.96537 7.40127 1.63129 6.75126 1.4364C6.35743 1.31866 5.94962 1.2578 5.53952 1.25555Z" fill="#464E2E"/>
@@ -136,10 +161,11 @@
             Earth Laundry
         </h3>
         <p class="newsletter__p">Sign up to hear about new arrivals and offers</p>
-        <form class="newsletter-form" action="">
-            <input class="newsletter-form__input" type="text" placeholder="Your email" />
-            <input class="btn" type="submit" value="Subscribe">
+        <form class="newsletter-form">
+            <input id="email" class="newsletter-form__input" type="email" value="" placeholder="Your email" />
+            <input class="newsletter-form__btn btn" value="Subscribe" onclick="validateEmail(getElementById('email').value)">
         </form>
+        <div class="newsletter-res container none"></div>
     </section>
     
     
@@ -193,6 +219,6 @@
     <script src="fetchDataShop.js" type="module"></script>
     <script src="sortProducts.js" type="module"></script>
     <script src="setupPagination.js" type="module"></script>
-
+    <script src="addToCart.js" type="module"></script>
 </body>
 </html>

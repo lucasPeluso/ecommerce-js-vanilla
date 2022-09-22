@@ -1,6 +1,7 @@
 const articlesProducts = document.getElementById('articles-products')
 const articleProduct = document.getElementById('article-product').content;
 const fragment = document.createDocumentFragment();
+const numbersOfItems = document.getElementById('numbers-of-items')
 let currentPage = 1;
 // nro de filas = nro de objetos que se muestran por pagina
 let rows = 8;
@@ -57,6 +58,10 @@ export function displayList(items, wrapper, rowsPerPage, page) {
             })
         }
     }
+    numbersOfItems.innerHTML = `1 - ${rows} of ${items.length} Items`
+    if (currentPage >= 2) {
+    numbersOfItems.innerHTML = `${(currentPage * 8) - 7} - ${((currentPage * 8) - 8) + paginatedItems.length} of ${items.length} Items`
+    }
 }
 //funcion para agregar botones segun se requiera
 export function setupPagination(items, wrapper, rowsPerPage) {
@@ -76,6 +81,7 @@ function paginationButton(page, items) {
     button.classList.add('pagination-button')
     
     if(currentPage == page) button.classList.add('active')
+
     
     button.addEventListener('click', function () {
         currentPage = page;
@@ -87,6 +93,7 @@ function paginationButton(page, items) {
 
         button.classList.add('active')
     })
+
     
     return button;
 }

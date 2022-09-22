@@ -5,6 +5,7 @@ import { displayList, setupPagination } from "./setupPagination.js";
 const articlesProducts = document.getElementById('articles-products')
 const pagination = document.getElementById('pagination')
 const select = document.getElementById('select')
+const rootCategory = document.getElementById('root-category')
 
 const addProduct = data => {
     // pagina actual
@@ -35,7 +36,8 @@ const addProduct = data => {
             sortElemPrice(data, false)
             displayList(data, articlesProducts, rows, currentPage)
         }
-    }  
+    } 
+    
 }
 
 // FETCH DATA
@@ -49,22 +51,27 @@ const fetchData = async () => {
         let nameCategory = localStorage.getItem("nameCategory")
         if(nameCategory == "category-sweaters" || nameCategory == "menu-sweaters") {
             const dataSweatersOnly = data.filter(({category}) => category === 'Sweaters');
-            localStorage.removeItem("nameCategory")
+            rootCategory.innerHTML = `SWEATERS`
+            // localStorage.removeItem("nameCategory")
             addProduct(dataSweatersOnly)
-        } else if(nameCategory == "category-shorts" || nameCategory == "menu-shorts") {
-            const dataShortsOnly = data.filter(({category}) => category === 'Shorts');
-            localStorage.removeItem("nameCategory")
-            addProduct(dataShortsOnly)
         } else if(nameCategory == "category-shoes" || nameCategory == "menu-shoes") {
             const dataShoesOnly = data.filter(({category}) => category === 'Shoes');
-            localStorage.removeItem("nameCategory")
+            rootCategory.innerHTML = `SHOES`
+            // localStorage.removeItem("nameCategory")
             addProduct(dataShoesOnly)
+        } else if(nameCategory == "category-shorts" || nameCategory == "menu-shorts") {
+            const dataShortsOnly = data.filter(({category}) => category === 'Shorts');
+            rootCategory.innerHTML = `SHORTS`
+            // localStorage.removeItem("nameCategory")
+            addProduct(dataShortsOnly)
         } else if(nameCategory == "menu-jewellery") {
             const dataJewelleryOnly = data.filter(({category}) => category === 'Jewellery');
-            localStorage.removeItem("nameCategory")
+            rootCategory.innerHTML = `JEWELLERY`
+            // localStorage.removeItem("nameCategory")
             addProduct(dataJewelleryOnly)
         } else {
-            localStorage.removeItem("nameCategory")
+            // localStorage.removeItem("nameCategory")
+            rootCategory.innerHTML = `EXPLORE ALL`
             addProduct(data)
         }
 
