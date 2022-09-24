@@ -2,6 +2,7 @@ const articlesProducts = document.getElementById('articles-products')
 const articleProduct = document.getElementById('article-product').content;
 const fragment = document.createDocumentFragment();
 const numbersOfItems = document.getElementById('numbers-of-items')
+const btnFav = document.getElementsByClassName('btn-fav')
 let currentPage = 1;
 // nro de filas = nro de objetos que se muestran por pagina
 let rows = 8;
@@ -23,11 +24,13 @@ export function displayList(items, wrapper, rowsPerPage, page) {
         articleProduct.querySelector('img').setAttribute("src", item.img);
         articleProduct.querySelector('.article-product__button').dataset.id  = item.id;
         articleProduct.querySelector('.article-product__img').dataset.id  = item.id;
-    
+        articleProduct.querySelector('.btn-fav').dataset.id = item.id;
         const clone = articleProduct.cloneNode(true);
         fragment.appendChild(clone)
         wrapper.appendChild(fragment);
         // obteniendo la id de la imagen del producto seleccionado 
+        const btnFav = document.getElementsByClassName('btn-fav')
+
         const image = document.getElementsByClassName('article-product__img')
         for(let i = 0; i < image.length; i++) {
             image[i].addEventListener('click', (e) => {
@@ -58,6 +61,35 @@ export function displayList(items, wrapper, rowsPerPage, page) {
             })
         }
     }
+
+    for(let i = 0; i < btnFav.length; i++) {
+        btnFav[i].addEventListener('click', (e) => {
+            const addToFav = (product) => {
+                if(localStorage.getItem("arrFavItems")) {
+                    const arrFavItems = JSON.parse(localStorage.getItem("arrFavItems"))
+                    const existProduct = arrFavItems.some((prod) => prod.id == product.id)
+                    if(existProduct) {
+                        const prod = arrFavItems.map(prod => {
+                            if(prod.id === product.id) {
+                                alert('The product you want to add already exists')
+                            }
+                        })
+                    } else {
+                        arrFavItems.push(product)
+                        localStorage.setItem('arrFavItems', JSON.stringify(arrFavItems))
+                        console.log(arrFavItems)
+                    }
+                } else {
+                    const arrFavItems = [];
+                    arrFavItems.push(product)
+                    localStorage.setItem('arrFavItems', JSON.stringify(arrFavItems))
+                    console.log(arrFavItems)
+                }
+            }        
+            addToFav(items[i])
+        })
+    }
+
     numbersOfItems.innerHTML = `1 - ${rows} of ${items.length} Items`
     if (currentPage >= 2) {
     numbersOfItems.innerHTML = `${(currentPage * 8) - 7} - ${((currentPage * 8) - 8) + paginatedItems.length} of ${items.length} Items`

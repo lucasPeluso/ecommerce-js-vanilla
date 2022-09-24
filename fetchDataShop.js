@@ -80,33 +80,33 @@ const fetchData = async () => {
     }
 }
 
-// ***************** Menu Links ***************** //
+// // ***************** Menu Links ***************** //
 
-const sweatersLink = document.getElementById('menu-sweaters')
-const shortsLink = document.getElementById('menu-shorts')
-const shoesLink = document.getElementById('menu-shoes')
-const exploreLink = document.getElementById('menu-explore')
-const jewelleryLink = document.getElementById('menu-jewellery')
+// const sweatersLink = document.getElementById('menu-sweaters')
+// const shortsLink = document.getElementById('menu-shorts')
+// const shoesLink = document.getElementById('menu-shoes')
+// const exploreLink = document.getElementById('menu-explore')
+// const jewelleryLink = document.getElementById('menu-jewellery')
 
-jewelleryLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
-})
+// jewelleryLink.addEventListener('click', (e) => {   
+//     getNameCategory(e)
+// })
 
-exploreLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
-})
+// exploreLink.addEventListener('click', (e) => {   
+//     getNameCategory(e)
+// })
 
-sweatersLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
-})
+// sweatersLink.addEventListener('click', (e) => {   
+//     getNameCategory(e)
+// })
 
-shortsLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
-})
+// shortsLink.addEventListener('click', (e) => {   
+//     getNameCategory(e)
+// })
 
-shoesLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
-})
+// shoesLink.addEventListener('click', (e) => {   
+//     getNameCategory(e)
+// })
 
 
 

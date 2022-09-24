@@ -1,3 +1,4 @@
+
 // ************** Menu *************
 
 ((d) => {
@@ -20,6 +21,34 @@
         }
     })
 })(document);
+
+// ***************** Menu Links ***************** //
+
+const sweatersLink = document.getElementById('menu-sweaters')
+const shortsLink = document.getElementById('menu-shorts')
+const shoesLink = document.getElementById('menu-shoes')
+const exploreLink = document.getElementById('menu-explore')
+const jewelleryLink = document.getElementById('menu-jewellery')
+
+jewelleryLink.addEventListener('click', (e) => {   
+    getNameCategory(e)
+})
+
+exploreLink.addEventListener('click', (e) => {   
+    getNameCategory(e)
+})
+
+sweatersLink.addEventListener('click', (e) => {   
+    getNameCategory(e)
+})
+
+shortsLink.addEventListener('click', (e) => {   
+    getNameCategory(e)
+})
+
+shoesLink.addEventListener('click', (e) => {   
+    getNameCategory(e)
+})
 
 
 
@@ -82,33 +111,6 @@ shoesCategory.addEventListener('click', (e) => {
 })
 
 
-// ***************** Menu Links ***************** //
-
-const sweatersLink = document.getElementById('menu-sweaters')
-const shortsLink = document.getElementById('menu-shorts')
-const shoesLink = document.getElementById('menu-shoes')
-const exploreLink = document.getElementById('menu-explore')
-const jewelleryLink = document.getElementById('menu-jewellery')
-
-jewelleryLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
-})
-
-exploreLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
-})
-
-sweatersLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
-})
-
-shortsLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
-})
-
-shoesLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
-})
 
 // ***************** Validar Email ***************** //
 

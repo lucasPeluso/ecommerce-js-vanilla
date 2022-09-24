@@ -25,7 +25,7 @@ export function sortElemTitle(data) {
         articleProduct.querySelector('img').setAttribute("src", product.img);
         articleProduct.querySelector('.article-product__button').dataset.id  = product.id;
         articleProduct.querySelector('.article-product__img').dataset.id  = product.id;
-    
+        articleProduct.querySelector('.btn-fav').dataset.id = product.id;
         const clone = articleProduct.cloneNode(true);
         fragment.appendChild(clone)
     });
@@ -58,6 +58,36 @@ export function sortElemTitle(data) {
             }
             setLocalButton()
             window.location.href="/sproduct.html";
+        })
+    }
+
+    const btnFav = document.getElementsByClassName('btn-fav')
+
+    for(let i = 0; i < btnFav.length; i++) {
+        btnFav[i].addEventListener('click', (e) => {
+            const addToFav = (product) => {
+                if(localStorage.getItem("arrFavItems")) {
+                    const arrFavItems = JSON.parse(localStorage.getItem("arrFavItems"))
+                    const existProduct = arrFavItems.some((prod) => prod.id == product.id)
+                    if(existProduct) {
+                        const prod = arrFavItems.map(prod => {
+                            if(prod.id === product.id) {
+                                alert('The product you want to add already exists')
+                            }
+                        })
+                    } else {
+                        arrFavItems.push(product)
+                        localStorage.setItem('arrFavItems', JSON.stringify(arrFavItems))
+                        console.log(arrFavItems)
+                    }
+                } else {
+                    const arrFavItems = [];
+                    arrFavItems.push(product)
+                    localStorage.setItem('arrFavItems', JSON.stringify(arrFavItems))
+                    console.log(arrFavItems)
+                }
+            }      
+            addToFav(data[e.target.dataset.id])
         })
     }
 }
@@ -80,7 +110,7 @@ export function sortElemPrice(data, asc) {
         articleProduct.querySelector('img').setAttribute("src", product.img);
         articleProduct.querySelector('.article-product__button').dataset.id  = product.id;
         articleProduct.querySelector('.article-product__img').dataset.id  = product.id;
-    
+        articleProduct.querySelector('.btn-fav').dataset.id = product.id;
         const clone = articleProduct.cloneNode(true);
         fragment.appendChild(clone)
     });
@@ -113,6 +143,36 @@ export function sortElemPrice(data, asc) {
             }
             setLocalButton()
             window.location.href="/sproduct.html";
+        })
+    }
+
+    const btnFav = document.getElementsByClassName('btn-fav')
+
+    for(let i = 0; i < btnFav.length; i++) {
+        btnFav[i].addEventListener('click', (e) => {
+            const addToFav = (product) => {
+                if(localStorage.getItem("arrFavItems")) {
+                    const arrFavItems = JSON.parse(localStorage.getItem("arrFavItems"))
+                    const existProduct = arrFavItems.some((prod) => prod.id == product.id)
+                    if(existProduct) {
+                        const prod = arrFavItems.map(prod => {
+                            if(prod.id === product.id) {
+                                alert('The product you want to add already exists')
+                            }
+                        })
+                    } else {
+                        arrFavItems.push(product)
+                        localStorage.setItem('arrFavItems', JSON.stringify(arrFavItems))
+                        console.log(arrFavItems)
+                    }
+                } else {
+                    const arrFavItems = [];
+                    arrFavItems.push(product)
+                    localStorage.setItem('arrFavItems', JSON.stringify(arrFavItems))
+                    console.log(arrFavItems)
+                }
+            }       
+            addToFav(data[e.target.dataset.id])
         })
     }
 }

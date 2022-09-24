@@ -1,3 +1,4 @@
+
 import { addToCart } from "./addToCart.js";
 
 const productDetails = document.querySelector('#product-details')
@@ -54,6 +55,7 @@ const getDetailsProduct = data => {
             productDetails.querySelector('h5').textContent = product.title;
             productDetails.querySelector('p').textContent = `$${product.price}.00`;
             productDetails.querySelector('img').setAttribute("src", product.img); 
+            productDetails.querySelector('.btn-fav').dataset.id = product.id;
 
             buttonSubtraction.addEventListener('click', () => {
                 if(quantityNumber.textContent == 1) {
@@ -79,7 +81,39 @@ const getDetailsProduct = data => {
             buttonAddCart.addEventListener('click', () => {
                 addToCart(product)
             })
+
+            const btnFav = document.getElementsByClassName('btn-fav')
+
+            let i = 0
+            btnFav[i].addEventListener('click', (e) => {
+                console.log('hola perro')
+                console.log(product)
+                const addToFav = (product) => {
+                    if(localStorage.getItem("arrFavItems")) {
+                        const arrFavItems = JSON.parse(localStorage.getItem("arrFavItems"))
+                        const existProduct = arrFavItems.some((prod) => prod.id == product.id)
+                        if(existProduct) {
+                            const prod = arrFavItems.map(prod => {
+                                if(prod.id === product.id) {
+                                    alert('The product you want to add already exists')
+                                }
+                            })
+                        } else {
+                            arrFavItems.push(product)
+                            localStorage.setItem('arrFavItems', JSON.stringify(arrFavItems))
+                            console.log(arrFavItems)
+                        }
+                    } else {
+                        const arrFavItems = [];
+                        arrFavItems.push(product)
+                        localStorage.setItem('arrFavItems', JSON.stringify(arrFavItems))
+                        console.log(arrFavItems)
+                    }
+                }    
+                addToFav(product)
+            })
         } 
+
     });
 
 }
@@ -97,31 +131,31 @@ const fetchDataSingleProduct = async () => {
 
 // ***************** Menu Links ***************** //
 
-const sweatersLink = document.getElementById('menu-sweaters')
-const shortsLink = document.getElementById('menu-shorts')
-const shoesLink = document.getElementById('menu-shoes')
-const exploreLink = document.getElementById('menu-explore')
-const jewelleryLink = document.getElementById('menu-jewellery')
+// const sweatersLink = document.getElementById('menu-sweaters')
+// const shortsLink = document.getElementById('menu-shorts')
+// const shoesLink = document.getElementById('menu-shoes')
+// const exploreLink = document.getElementById('menu-explore')
+// const jewelleryLink = document.getElementById('menu-jewellery')
 
-jewelleryLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
-})
+// jewelleryLink.addEventListener('click', (e) => {   
+//     getNameCategory(e)
+// })
 
-exploreLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
-})
+// exploreLink.addEventListener('click', (e) => {   
+//     getNameCategory(e)
+// })
 
-sweatersLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
-})
+// sweatersLink.addEventListener('click', (e) => {   
+//     getNameCategory(e)
+// })
 
-shortsLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
-})
+// shortsLink.addEventListener('click', (e) => {   
+//     getNameCategory(e)
+// })
 
-shoesLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
-})
+// shoesLink.addEventListener('click', (e) => {   
+//     getNameCategory(e)
+// })
 
 
 document.addEventListener('DOMContentLoaded', () => {
