@@ -1,49 +1,50 @@
-const articlesProducts = document.getElementById('articles-products')
-const articleProduct = document.getElementById('article-product').content;
+const searchItems = document.getElementById('search-items')
+const searchItem = document.getElementById('search-item').content;
 const fragment = document.createDocumentFragment();
-const numbersOfItems = document.getElementById('numbers-of-items')
 const btnFav = document.getElementsByClassName('btn-fav')
-let currentPage = 1;
-// nro de filas = nro de objetos que se muestran por pagina
-let rows = 8;
-
+const searchValue = document.getElementById('search-value')
+const searchResults = document.getElementById('search-results')
 // funcion para desplegar la lista 
-export function displayList(items, wrapper, rowsPerPage, page) {
-    wrapper.innerHTML = "";
-    page--;
-    let start = rowsPerPage * page;
-    let end = start + rowsPerPage;
-    let paginatedItems = items.slice(start, end);
+function getSearchResults() {
 
-    for (let i = 0; i < paginatedItems.length; i++) {
-        let item = paginatedItems[i]
+    let searchKey = localStorage.getItem('search value')
+    let newData = JSON.parse(localStorage.getItem('search product'))
+    searchResults.textContent = newData.length;
+    searchValue.textContent = searchKey
+
+
+    for (let i = 0; i < newData.length; i++) {
+        let item = newData[i]
         // cargando los productos por defecto
-        articleProduct.querySelector('h5').textContent = item.title;
-        articleProduct.querySelector('p').textContent = `$${item.price}.00`;
-        articleProduct.querySelector('p').dataset.price  = item.price;
-        articleProduct.querySelector('img').setAttribute("src", item.img);
-        articleProduct.querySelector('.article-product__button').dataset.id  = item.id;
-        articleProduct.querySelector('.article-product__img').dataset.id  = item.id;
-        articleProduct.querySelector('.btn-fav').dataset.id = item.id;
+        searchItem.querySelector('h5').textContent = item.title;
+        searchItem.querySelector('p').textContent = `$${item.price}.00`;
+        searchItem.querySelector('p').dataset.price  = item.price;
+        searchItem.querySelector('img').setAttribute("src", item.img);
+        searchItem.querySelector('.article-product__button').dataset.id  = item.id;
+        searchItem.querySelector('.article-product__button').dataset.value  = item.category;
+        searchItem.querySelector('.article-product__img').dataset.id  = item.id;
+        searchItem.querySelector('.article-product__img').dataset.alt  = item.category;
+        searchItem.querySelector('.btn-fav').dataset.id = item.id;
         if(localStorage.getItem("arrFavItems")) {
             let arrFavItems = JSON.parse(localStorage.getItem("arrFavItems"))
             const existProduct = arrFavItems.some((prod) => prod.id == item.id)
             if(existProduct) {
-                console.log(articleProduct)
-                articleProduct.querySelector('.btn-fav').classList.add('fill-pink')
+                searchItem.querySelector('.btn-fav').classList.add('fill-pink')
             } else {
-                articleProduct.querySelector('.btn-fav').classList.remove('fill-pink')
+                searchItem.querySelector('.btn-fav').classList.remove('fill-pink')
             }
         }  
 
-        const clone = articleProduct.cloneNode(true);
+        const clone = searchItem.cloneNode(true);
         fragment.appendChild(clone)
-        wrapper.appendChild(fragment);
+        searchItems.appendChild(fragment);
         // obteniendo la id de la imagen del producto seleccionado 
 
         const image = document.getElementsByClassName('article-product__img')
         for(let i = 0; i < image.length; i++) {
             image[i].addEventListener('click', (e) => {
+                let nameCategory = e.target.dataset.alt
+                localStorage.setItem("nameCategory", nameCategory)
                 let id = e.target.dataset.id
                 localStorage.setItem("id", id)
                 window.location.href="/sproduct.html";
@@ -53,6 +54,8 @@ export function displayList(items, wrapper, rowsPerPage, page) {
         const button = document.getElementsByClassName('article-product__button')
         for(let i = 0; i < button.length; i++) {
             button[i].addEventListener('click', (e) => {
+                let nameCategory = e.target.dataset.value
+                localStorage.setItem("nameCategory", nameCategory)
                 let id = e.target.dataset.id
                 localStorage.setItem("id", id)
                 window.location.href="/sproduct.html";
@@ -92,43 +95,6 @@ export function displayList(items, wrapper, rowsPerPage, page) {
             addToFav(items[i])
         })
     }
-
-    numbersOfItems.innerHTML = `1 - ${rows} of ${items.length} Items`
-    if (currentPage >= 2) {
-    numbersOfItems.innerHTML = `${(currentPage * 8) - 7} - ${((currentPage * 8) - 8) + paginatedItems.length} of ${items.length} Items`
-    }
-}
-//funcion para agregar botones segun se requiera
-export function setupPagination(items, wrapper, rowsPerPage) {
-    wrapper.innerHTML = "";
-    
-    let pageCount = Math.ceil(items.length / rowsPerPage);
-    for (let i = 1; i < pageCount + 1; i++) {
-        let btn = paginationButton(i, items);
-        wrapper.appendChild(btn)
-    }
 }
 
-// funcion para cambiar de pagina
-function paginationButton(page, items) {
-    let button = document.createElement('button');
-    button.innerText = page;
-    button.classList.add('pagination-button')
-    
-    if(currentPage == page) button.classList.add('active')
-
-    
-    button.addEventListener('click', function () {
-        currentPage = page;
-        displayList(items, articlesProducts, rows, currentPage)
-        window.location.href="#"
-
-        let currentBtn = document.querySelector('.pagination-button.active')
-        currentBtn.classList.remove('active')
-
-        button.classList.add('active')
-    })
-
-    
-    return button;
-}
+document.addEventListener('DOMContentLoaded', () => getSearchResults())

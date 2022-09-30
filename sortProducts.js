@@ -26,6 +26,7 @@ export function sortElemTitle(data) {
         articleProduct.querySelector('.article-product__button').dataset.id  = product.id;
         articleProduct.querySelector('.article-product__img').dataset.id  = product.id;
         articleProduct.querySelector('.btn-fav').dataset.id = product.id;
+
         const clone = articleProduct.cloneNode(true);
         fragment.appendChild(clone)
     });
@@ -34,14 +35,8 @@ export function sortElemTitle(data) {
     const image = document.getElementsByClassName('article-product__img')
     for(let i = 0; i < image.length; i++) {
         image[i].addEventListener('click', (e) => {
-            function setLocalImage() {
-                let imageId = {
-                    id: undefined
-                }
-                let id = e.target.dataset.id
-                localStorage.setItem("id", id)
-            }
-            setLocalImage()
+            let id = e.target.dataset.id
+            localStorage.setItem("id", id)
             window.location.href="/sproduct.html";
         })
     }
@@ -49,14 +44,8 @@ export function sortElemTitle(data) {
     const button = document.getElementsByClassName('article-product__button')
     for(let i = 0; i < button.length; i++) {
         button[i].addEventListener('click', (e) => {
-            function setLocalButton() {
-                let buttonId = {
-                    id: undefined
-                }
-                let id = e.target.dataset.id
-                localStorage.setItem("id", id)
-            }
-            setLocalButton()
+            let id = e.target.dataset.id
+            localStorage.setItem("id", id)
             window.location.href="/sproduct.html";
         })
     }
@@ -65,14 +54,17 @@ export function sortElemTitle(data) {
 
     for(let i = 0; i < btnFav.length; i++) {
         btnFav[i].addEventListener('click', (e) => {
+            btnFav[i].classList.add('fill-pink')
             const addToFav = (product) => {
                 if(localStorage.getItem("arrFavItems")) {
-                    const arrFavItems = JSON.parse(localStorage.getItem("arrFavItems"))
+                    let arrFavItems = JSON.parse(localStorage.getItem("arrFavItems"))
                     const existProduct = arrFavItems.some((prod) => prod.id == product.id)
                     if(existProduct) {
                         const prod = arrFavItems.map(prod => {
                             if(prod.id === product.id) {
-                                alert('The product you want to add already exists')
+                                btnFav[i].classList.remove('fill-pink')
+                                arrFavItems = arrFavItems.filter((prod) => prod.id !== product.id);
+                                localStorage.setItem('arrFavItems', JSON.stringify(arrFavItems))
                             }
                         })
                     } else {
@@ -81,7 +73,7 @@ export function sortElemTitle(data) {
                         console.log(arrFavItems)
                     }
                 } else {
-                    const arrFavItems = [];
+                    let arrFavItems = [];
                     arrFavItems.push(product)
                     localStorage.setItem('arrFavItems', JSON.stringify(arrFavItems))
                     console.log(arrFavItems)
@@ -111,6 +103,7 @@ export function sortElemPrice(data, asc) {
         articleProduct.querySelector('.article-product__button').dataset.id  = product.id;
         articleProduct.querySelector('.article-product__img').dataset.id  = product.id;
         articleProduct.querySelector('.btn-fav').dataset.id = product.id;
+
         const clone = articleProduct.cloneNode(true);
         fragment.appendChild(clone)
     });
@@ -119,14 +112,8 @@ export function sortElemPrice(data, asc) {
     const image = document.getElementsByClassName('article-product__img')
     for(let i = 0; i < image.length; i++) {
         image[i].addEventListener('click', (e) => {
-            function setLocalImage() {
-                let imageId = {
-                    id: undefined
-                }
-                let id = e.target.dataset.id
-                localStorage.setItem("id", id)
-            }
-            setLocalImage()
+            let id = e.target.dataset.id
+            localStorage.setItem("id", id)
             window.location.href="/sproduct.html";
         })
     }
@@ -134,14 +121,8 @@ export function sortElemPrice(data, asc) {
     const button = document.getElementsByClassName('article-product__button')
     for(let i = 0; i < button.length; i++) {
         button[i].addEventListener('click', (e) => {
-            function setLocalButton() {
-                let buttonId = {
-                    id: undefined
-                }
-                let id = e.target.dataset.id
-                localStorage.setItem("id", id)
-            }
-            setLocalButton()
+            let id = e.target.dataset.id
+            localStorage.setItem("id", id)
             window.location.href="/sproduct.html";
         })
     }
@@ -150,14 +131,17 @@ export function sortElemPrice(data, asc) {
 
     for(let i = 0; i < btnFav.length; i++) {
         btnFav[i].addEventListener('click', (e) => {
+            btnFav[i].classList.add('fill-pink')
             const addToFav = (product) => {
                 if(localStorage.getItem("arrFavItems")) {
-                    const arrFavItems = JSON.parse(localStorage.getItem("arrFavItems"))
+                    let arrFavItems = JSON.parse(localStorage.getItem("arrFavItems"))
                     const existProduct = arrFavItems.some((prod) => prod.id == product.id)
                     if(existProduct) {
                         const prod = arrFavItems.map(prod => {
                             if(prod.id === product.id) {
-                                alert('The product you want to add already exists')
+                                btnFav[i].classList.remove('fill-pink')
+                                arrFavItems = arrFavItems.filter((prod) => prod.id !== product.id);
+                                localStorage.setItem('arrFavItems', JSON.stringify(arrFavItems))
                             }
                         })
                     } else {
@@ -166,7 +150,7 @@ export function sortElemPrice(data, asc) {
                         console.log(arrFavItems)
                     }
                 } else {
-                    const arrFavItems = [];
+                    let arrFavItems = [];
                     arrFavItems.push(product)
                     localStorage.setItem('arrFavItems', JSON.stringify(arrFavItems))
                     console.log(arrFavItems)

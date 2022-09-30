@@ -4,11 +4,17 @@
 ((d) => {
     const $btnMenu = d.querySelector(".menu-btn"),
         $menu = d.querySelector(".menu");
-
+        $btnUser = d.querySelector("#btn-user")
+        $menuLogSign = d.querySelector(".menu-log-sign")
+        
     $btnMenu.addEventListener("click", (e) => {
         $btnMenu.firstElementChild.classList.toggle("none");
         $btnMenu.lastElementChild.classList.toggle("none");
         $menu.classList.toggle("is-active");
+    });
+
+    $btnUser.addEventListener("click", (e) => {
+        $menuLogSign.classList.toggle("is-active");
     });
 
     d.addEventListener("click", e => {
@@ -30,42 +36,66 @@ const shoesLink = document.getElementById('menu-shoes')
 const exploreLink = document.getElementById('menu-explore')
 const jewelleryLink = document.getElementById('menu-jewellery')
 
+const getNameCategoryLink = (e) => {
+    let nameCategory = e.target.textContent
+    setCategory(nameCategory)
+    window.location.href="/shop.html"
+} 
+
 jewelleryLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
+    getNameCategoryLink(e)
 })
 
 exploreLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
+    getNameCategoryLink(e)
 })
 
 sweatersLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
+    getNameCategoryLink(e)
 })
 
 shortsLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
+    getNameCategoryLink(e)
 })
 
 shoesLink.addEventListener('click', (e) => {   
-    getNameCategory(e)
+    getNameCategoryLink(e)
 })
 
+// ***************** Search Product ******************//
 
+const searchBtn = document.getElementById('search-btn')
+const searchInput = document.getElementById('search-input')
 
-// ***************** testimony slider ******************* //
-
-
-let counterTestimony = 1;
-
-setInterval(() => {
-    document.getElementById('testimony__radio' + counterTestimony).checked = true;
-    counterTestimony++;
-    if(counterTestimony > 3) {
-        counterTestimony = 1;
+searchInput.addEventListener('keypress', async (e) => {
+    if(e.key == 'Enter') {
+        const res = await fetch('api.json');
+        let data = await res.json();
+        let newData = [];
+        data.forEach((product) => {
+            product.title.toLowerCase().includes(searchInput.value.toLowerCase())
+                ? newData.push(product)
+                : console.log('0 items')
+        })
+        localStorage.setItem('search value', JSON.stringify(searchInput.value))
+        localStorage.setItem('search product', JSON.stringify(newData))
+        window.location.href="/search.html"
     }
-}, 5000)
+})
 
-// ***************** Category Selector ******************* //
+searchBtn.addEventListener('click', async () => {
+    const res = await fetch('api.json');
+    let data = await res.json();
+    let newData = [];
+    data.forEach((product) => {
+        product.title.toLowerCase().includes(searchInput.value.toLowerCase())
+            ? newData.push(product)
+            : console.log('0 items')
+    })
+    localStorage.setItem('search value', JSON.stringify(searchInput.value))
+    localStorage.setItem('search product', JSON.stringify(newData))
+    window.location.href="/search.html"
+})
 
 
 // section categories
@@ -79,23 +109,18 @@ const shoesCategory = document.getElementById('category-shoes')
 
 //  funcion para crear el objeto category
 function setCategory(nameCategory) {
-    let category = {
-        nameCategory: undefined
-    }
-
+    nameCategory = nameCategory
     localStorage.setItem("nameCategory", nameCategory)
 }
 
+const getNameCategory = (e) => {
+    let nameCategory = e.target.alt
+    setCategory(nameCategory)
+    window.location.href="/shop.html"
+} 
 
 // funcion para obtener el nombre de la categoría y "setearla"
-const getNameCategory = (e) => {
-    let nameCategory = e.target.id
-    setCategory(nameCategory)
-    console.log(nameCategory)
 
-    window.location.href="/shop.html"
-
-} 
 
 // evento que obtiene la categoría de cada imagén
 sweatersCategory.addEventListener('click', (e) => {   
@@ -130,3 +155,20 @@ function validateEmail(email) {
         newsletterRes.textContent = 'The email is NOT valid'
     }
 }
+
+
+// ***************** testimony slider ******************* //
+
+
+let counterTestimony = 1;
+
+setInterval(() => {
+    document.getElementById('testimony__radio' + counterTestimony).checked = true;
+    counterTestimony++;
+    if(counterTestimony > 3) {
+        counterTestimony = 1;
+    }
+}, 5000)
+
+// ***************** Category Selector ******************* //
+

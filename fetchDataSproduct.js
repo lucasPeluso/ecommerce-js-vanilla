@@ -19,18 +19,11 @@ const getDetailsProduct = data => {
 
     data.forEach(product => {
         if (product.id == id) {
-            if(nameCategory == "category-sweaters" || nameCategory == "menu-sweaters") {
-                rootCategory.innerHTML = `SWEATERS`;
-            } else if(nameCategory == "category-shoes" || nameCategory == "menu-shoes") {
-                rootCategory.innerHTML = `SHOES`
-            } else if(nameCategory == "category-shorts" || nameCategory == "menu-shorts") {
-                rootCategory.innerHTML = `SHORTS`
-            } else if(nameCategory == "menu-jewellery") {
-                rootCategory.innerHTML = `JEWELLERY`
-            } else {
-                // localStorage.removeItem("nameCategory")
-                rootCategory.innerHTML = `EXPLORE ALL`
-            }
+
+            let nameCategory = product.category
+            localStorage.setItem("nameCategory", nameCategory)
+
+            rootCategory.textContent = product.category.toUpperCase()
 
             let itemColors = product.color;
 
@@ -56,6 +49,13 @@ const getDetailsProduct = data => {
             productDetails.querySelector('p').textContent = `$${product.price}.00`;
             productDetails.querySelector('img').setAttribute("src", product.img); 
             productDetails.querySelector('.btn-fav').dataset.id = product.id;
+            if(localStorage.getItem("arrFavItems")) {
+                let arrFavItems = JSON.parse(localStorage.getItem("arrFavItems"))
+                const existProduct = arrFavItems.some((prod) => prod.id == product.id)
+                if(existProduct) {
+                    productDetails.querySelector('.btn-fav').classList.add('fill-pink')
+                }
+            }  
 
             buttonSubtraction.addEventListener('click', () => {
                 if(quantityNumber.textContent == 1) {
@@ -63,7 +63,6 @@ const getDetailsProduct = data => {
                 } else {
                     quantityNumber.textContent--
                 }
-                console.log('hola resta')
                 product.quantity = quantityNumber.textContent
 
             })
@@ -72,7 +71,6 @@ const getDetailsProduct = data => {
                 if(quantityNumber.textContent < 99) {
                     quantityNumber.textContent++
                 } 
-                console.log('hola suma')
                 product.quantity = quantityNumber.textContent
             })
             
@@ -89,13 +87,16 @@ const getDetailsProduct = data => {
                 console.log('hola perro')
                 console.log(product)
                 const addToFav = (product) => {
+                    btnFav[i].classList.add('fill-pink')
                     if(localStorage.getItem("arrFavItems")) {
-                        const arrFavItems = JSON.parse(localStorage.getItem("arrFavItems"))
+                        let arrFavItems = JSON.parse(localStorage.getItem("arrFavItems"))
                         const existProduct = arrFavItems.some((prod) => prod.id == product.id)
                         if(existProduct) {
                             const prod = arrFavItems.map(prod => {
                                 if(prod.id === product.id) {
-                                    alert('The product you want to add already exists')
+                                    btnFav[i].classList.remove('fill-pink')
+                                    arrFavItems = arrFavItems.filter((prod) => prod.id !== product.id);
+                                    localStorage.setItem('arrFavItems', JSON.stringify(arrFavItems))
                                 }
                             })
                         } else {
@@ -104,7 +105,7 @@ const getDetailsProduct = data => {
                             console.log(arrFavItems)
                         }
                     } else {
-                        const arrFavItems = [];
+                        let arrFavItems = [];
                         arrFavItems.push(product)
                         localStorage.setItem('arrFavItems', JSON.stringify(arrFavItems))
                         console.log(arrFavItems)
@@ -131,36 +132,7 @@ const fetchDataSingleProduct = async () => {
 
 // ***************** Menu Links ***************** //
 
-// const sweatersLink = document.getElementById('menu-sweaters')
-// const shortsLink = document.getElementById('menu-shorts')
-// const shoesLink = document.getElementById('menu-shoes')
-// const exploreLink = document.getElementById('menu-explore')
-// const jewelleryLink = document.getElementById('menu-jewellery')
-
-// jewelleryLink.addEventListener('click', (e) => {   
-//     getNameCategory(e)
-// })
-
-// exploreLink.addEventListener('click', (e) => {   
-//     getNameCategory(e)
-// })
-
-// sweatersLink.addEventListener('click', (e) => {   
-//     getNameCategory(e)
-// })
-
-// shortsLink.addEventListener('click', (e) => {   
-//     getNameCategory(e)
-// })
-
-// shoesLink.addEventListener('click', (e) => {   
-//     getNameCategory(e)
-// })
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    fetchDataSingleProduct()
-})
+document.addEventListener('DOMContentLoaded', () => fetchDataSingleProduct())
 
 
 

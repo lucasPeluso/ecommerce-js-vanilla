@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500&display=swap');
 
 /* *********** Custom Properties********** */
 :root {
-    --color-beige: #E7E3D4;
+    --color-beige: beige;
     --color-green: #ACB992;
     --color-green-dark: #464E2E;
     --color-black: #333;
     --color-brown: #362706;
     --font-serif: 'Lora', serif;
     --font-sans-serif: 'Raleway', sans-serif;
+    --font-display: 'Big Shoulders Display', sans-serif;
     --header-sm-height: 60px;
     --header-lg-height: 60px;
 }
@@ -168,6 +170,39 @@ header {
     cursor: pointer;
 }
 
+.menu-log-sign {
+    position: absolute;
+    top: calc(var(--header-sm-height) - 18px);
+    padding: 8px;
+    border: 1px solid var(--color-green-dark);
+    background-color: var(--color-beige);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.menu-log-sign.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.menu-log-in,
+.menu-sign-in {
+    text-decoration: none;
+    color: var(--color-black);
+    letter-spacing: 1px;
+    font-family: var(--font-sans-serif);
+    transition: all .3s ease-out;
+}
+
+.menu-log-in:hover,
+.menu-sign-in:hover {
+    letter-spacing: 2px;
+}
+
+.menu-option {
+    position: relative;
+}
+
 @media screen and (min-width: 1024px) {
 
     .menu {
@@ -295,6 +330,11 @@ header {
     top: 0;
     width: 200px;
     height: 200px;
+    transition: all .5s ease-in-out;
+}
+
+.article__circle:hover {
+    rotate: 45deg;
 }
 
 .article__h4 {
@@ -337,8 +377,13 @@ header {
 }
 
 .btn-fav,
-.btn-fav__trend {
+.btn-fav__trend,
+.btn-fav__similar {
     cursor: pointer;
+} 
+
+.fill-pink {
+    fill: rgb(255, 124, 124);
 } 
 
 .category {
@@ -369,22 +414,19 @@ header {
 
 .category-container__name {
     position: absolute;
-    display: inline-block;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
     margin: auto;
-    height: 38px;
     max-width: min-content;
-    padding: 8px 16px;
-    background-color: var(--color-green);
-    color: var(--color-green-dark);
-    font-family: var(--font-sans-serif);
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 22px;
-    letter-spacing: 0.2em;
+    height: 96px;
+    color: var(--color-beige);
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 96px;
+    line-height: 96px;
+    letter-spacing: -2px;
 }
 
 .category-container__sweaters-img {
@@ -501,6 +543,17 @@ header {
 
 .home-container__logo-img {
     height: 81px;
+    transition: all .5s ease-in-out;
+}
+
+.home-container__logo:hover > .home-container__logo-img {
+    transform: translate(-20px);
+    scale: 1.1;
+    opacity: .5;
+}
+
+.home-container__logo:hover > .home-container__logo-p {
+    transform: translateY(16px);
 }
 
 .home-container__logo-p {
@@ -511,6 +564,7 @@ header {
     line-height: 14px;
     letter-spacing: 1px;
     margin: 0;
+    transition: all .5s ease-in-out;
 }
 
 .home-container__slide {
@@ -998,10 +1052,9 @@ header {
     }
 
     .category-container__name {
-        height: 46px;
-        font-size: 24px;
-        line-height: 30px;
-        letter-spacing: 0.2em;
+        height: 134px;
+        font-size: 134px;
+        line-height: 134px;
     }
 
     .category-container__shoes-shorts {
@@ -2070,4 +2123,76 @@ header {
         grid-template-columns: repeat(3, 1fr);
         column-gap: 16px;
     }
+}
+
+/***************** SEARCH ************/
+
+.search {
+    margin-top: calc(var(--header-sm-height) + 24px);
+    padding: 16px;
+}
+
+.search-items {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 64px 8px;
+    margin-bottom: 64px;
+}
+
+.search-title__h2 {
+    font-size: 18px;
+}
+
+.search-results {
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+@media screen and (min-width: 768px) {
+    .search {
+        margin-bottom: 64px;
+    }
+
+    .search-items {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 80px 16px;
+    }
+
+}
+
+/************** Log In ****************/
+
+.login {
+    margin-top: var(--header-sm-height);
+    height: 100vh;
+    padding: 16px;
+    letter-spacing: 1px;
+}
+
+.log-in, 
+.sign-in {
+    border: 2px solid var(--color-green-dark);
+    height: 300px;
+    padding: 16px;
+}
+
+.log-in__form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+    width: 100%;
+}
+
+.log-in__input {
+    background-color: var(--color-beige);
+    border: 1px solid var(--color-green-dark);
+    height: 30px;
+    width: 100%;
+}
+
+.log-in__label {
+    display: block;
+    margin-bottom: 4px;
 }

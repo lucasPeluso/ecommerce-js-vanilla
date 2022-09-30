@@ -49,28 +49,23 @@ const fetchData = async () => {
 
         // obteniendo la data correspondiente a la categoria elegida
         let nameCategory = localStorage.getItem("nameCategory")
-        if(nameCategory == "category-sweaters" || nameCategory == "menu-sweaters") {
+        if(nameCategory == "Sweaters") {
             const dataSweatersOnly = data.filter(({category}) => category === 'Sweaters');
             rootCategory.innerHTML = `SWEATERS`
-            // localStorage.removeItem("nameCategory")
             addProduct(dataSweatersOnly)
-        } else if(nameCategory == "category-shoes" || nameCategory == "menu-shoes") {
+        } else if(nameCategory == "Shoes") {
             const dataShoesOnly = data.filter(({category}) => category === 'Shoes');
             rootCategory.innerHTML = `SHOES`
-            // localStorage.removeItem("nameCategory")
             addProduct(dataShoesOnly)
-        } else if(nameCategory == "category-shorts" || nameCategory == "menu-shorts") {
+        } else if(nameCategory == "Shorts") {
             const dataShortsOnly = data.filter(({category}) => category === 'Shorts');
             rootCategory.innerHTML = `SHORTS`
-            // localStorage.removeItem("nameCategory")
             addProduct(dataShortsOnly)
-        } else if(nameCategory == "menu-jewellery") {
+        } else if(nameCategory == "Jewellery") {
             const dataJewelleryOnly = data.filter(({category}) => category === 'Jewellery');
             rootCategory.innerHTML = `JEWELLERY`
-            // localStorage.removeItem("nameCategory")
             addProduct(dataJewelleryOnly)
         } else {
-            // localStorage.removeItem("nameCategory")
             rootCategory.innerHTML = `EXPLORE ALL`
             addProduct(data)
         }
@@ -79,35 +74,6 @@ const fetchData = async () => {
         console.log(error)
     }
 }
-
-// // ***************** Menu Links ***************** //
-
-// const sweatersLink = document.getElementById('menu-sweaters')
-// const shortsLink = document.getElementById('menu-shorts')
-// const shoesLink = document.getElementById('menu-shoes')
-// const exploreLink = document.getElementById('menu-explore')
-// const jewelleryLink = document.getElementById('menu-jewellery')
-
-// jewelleryLink.addEventListener('click', (e) => {   
-//     getNameCategory(e)
-// })
-
-// exploreLink.addEventListener('click', (e) => {   
-//     getNameCategory(e)
-// })
-
-// sweatersLink.addEventListener('click', (e) => {   
-//     getNameCategory(e)
-// })
-
-// shortsLink.addEventListener('click', (e) => {   
-//     getNameCategory(e)
-// })
-
-// shoesLink.addEventListener('click', (e) => {   
-//     getNameCategory(e)
-// })
-
 
 
 document.addEventListener('DOMContentLoaded', () => fetchData())
